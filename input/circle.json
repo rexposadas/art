@@ -1,0 +1,18 @@
+{
+  "type": "circle",
+  "out": {
+    "prefix": "circle",
+    "dir": "output/generated/circles"
+  },
+  "canvas": {
+    "width": 1000,
+    "height": 1000
+  },
+  "colors": {
+    "scheme": [
+      {"r":111, "g": 84, "b": 140, "a":  255},
+      {"r":92, "g": 204, "b": 206, "a":  255},
+      {"r":178, "g": 162, "b": 150, "a":  255}
+    ]
+  }
+}
