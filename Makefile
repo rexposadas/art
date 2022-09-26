@@ -33,6 +33,12 @@ perls: build
 domain: build
 	./art domain -c 10 -f input/basic.json
 
+hole: build
+	./art hole -c 10 -f input/basic.json
+
+spiral_square: build
+	./art squares spiral -c 10 -f input/basic.json
+
 
 store:
 	mv output output-$(ts)
