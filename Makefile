@@ -30,6 +30,9 @@ squares: build
 perls: build
 	./art perls -c 10 -f input/basic.json
 
+domain: build
+	./art domain -c 10 -f input/basic.json
+
 
 store:
 	mv output output-$(ts)
