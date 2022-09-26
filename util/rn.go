@@ -2,19 +2,24 @@ package util
 
 import (
 	"github.com/google/uuid"
+	"github.com/jdxyw/generativeart/common"
 	"image/color"
 	"math/rand"
 	"strings"
 	"time"
 )
 
-func RandomBackGround() color.RGBA {
-	return color.RGBA{
-		R: Rn8(4, 10),
-		G: Rn8(4, 10),
-		B: Rn8(4, 10),
-		A: Rn8(100, 255),
+func RnBackground() color.RGBA {
+	bg := []color.RGBA{
+		common.Black,
+		common.White,
+		common.Azure,
+		common.Aquamarine,
+		common.PaleTurquoise,
+		common.Plum,
 	}
+
+	return bg[rand.Intn(len(bg))]
 }
 
 func Rn8(min, max int) uint8 {

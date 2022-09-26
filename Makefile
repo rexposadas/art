@@ -17,10 +17,18 @@ try: build
 	./art try
 	#open output/merged/*
 
-circle: build
-	./art circles -c 7 -f input/circle.json
-	./art circles -c 7 -f input/circle-spring.json
+circles_gradient: build
+	./art circles gradient -c 7 -f input/circle.json
 
+circles: build
+	./art circles regular -c 7 -f input/circle.json
+	./art circles gradient -c 7 -f input/circle-spring.json
+
+squares: build
+	./art squares regular
+
+perls: build
+	./art perls -c 10 -f input/basic.json
 
 
 store:

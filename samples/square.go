@@ -12,7 +12,7 @@ import (
 
 func Square(filename string) {
 	rand.Seed(time.Now().Unix())
-	c := generativeart.NewCanva(1000, 1000)
+	c := generativeart.NewCanva(500, 500)
 	c.SetBackground(common.White)
 	c.FillBackground()
 	c.SetColorSchema([]color.RGBA{

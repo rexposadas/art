@@ -1,0 +1,18 @@
+{
+  "type": "general",
+  "out": {
+    "prefix": "general",
+    "dir": "output"
+  },
+  "canvas": {
+    "width": 300,
+    "height": 300
+  },
+  "colors": {
+    "scheme": [
+      {"r":111, "g": 84, "b": 140, "a":  255},
+      {"r":92, "g": 204, "b": 206, "a":  255},
+      {"r":178, "g": 162, "b": 150, "a":  255}
+    ]
+  }
+}

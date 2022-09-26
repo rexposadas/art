@@ -33,7 +33,7 @@ func CircleGradient(filename string) {
 		{0xEF, 0x13, 0x55, 0xFF},
 		{0xF4, 0x9F, 0x0A, 0xFF},
 	}
-	c := generativeart.NewCanva(800, 800)
+	c := generativeart.NewCanva(500, 500)
 	c.SetBackground(common.White)
 	c.FillBackground()
 	c.SetColorSchema(colors)
