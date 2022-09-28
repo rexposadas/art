@@ -5,17 +5,25 @@ import (
 	"art/util"
 	"github.com/jdxyw/generativeart"
 	"github.com/jdxyw/generativeart/arts"
-	"github.com/jdxyw/generativeart/common"
+	"math/rand"
+	"time"
 )
 
-func SpiralSquare(cfg *models.Config) {
+func julia1(z complex128) complex128 {
+	c := complex(-0.1, 0.651)
+
+	z = z*z + c
+
+	return z
+}
+
+func Julia(cfg *models.Config) {
+	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
-	c.SetBackground(common.MistyRose)
-	c.SetLineWidth(float64(util.Rn(5, 10)))
-	c.SetLineColor(util.RnColor())
+	c.SetIterations(800)
 	c.SetColorSchema(util.RnColorScheme())
-	c.SetForeground(util.RnColor())
 	c.FillBackground()
-	c.Draw(arts.NewSpiralSquare(40, 400, 0.05, true))
+	c.Draw(arts.NewJulia(julia1, 40, 1.5, 1.5))
 	c.ToPNG(cfg.OutURL())
+
 }

@@ -21,6 +21,20 @@ func RnColorScheme() []color.RGBA {
 	return schemes[rand.Intn(len(schemes))]
 }
 
+func RnColor() color.RGBA {
+	schemes := []color.RGBA{
+		common.Black,
+		common.Azure,
+		common.PaleTurquoise,
+		common.Bisque,
+		common.MediumAquamarine,
+		common.Plum,
+		common.Orange,
+	}
+
+	return schemes[rand.Intn(len(schemes))]
+}
+
 func RnBackground() color.RGBA {
 	bg := []color.RGBA{
 		common.Black,

@@ -5,7 +5,6 @@ import (
 	"art/util"
 	"github.com/jdxyw/generativeart"
 	"github.com/jdxyw/generativeart/arts"
-	"image/color"
 	"math/rand"
 	"time"
 )
@@ -13,9 +12,10 @@ import (
 func Perls(cfg *models.Config) {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
-	c.SetBackground(color.RGBA{0x1a, 0x06, 0x33, 0xFF})
+	c.SetBackground(util.RnColor())
 	c.FillBackground()
 	c.SetColorSchema(util.RnColorScheme())
-	c.Draw(arts.NewContourLine(500))
+	//c.Draw(arts.NewContourLine(500))
+	c.Draw(arts.NewContourLine(util.Rn(480, 520)))
 	c.ToPNG(cfg.OutURL())
 }

@@ -15,12 +15,22 @@ import (
 
 func Circles(cfg *models.Config) {
 	rand.Seed(time.Now().Unix())
-
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(common.Black)
 	c.FillBackground()
 	c.SetColorSchema(cfg.Colors.Scheme)
 	c.Draw(arts.NewCircleLoop2(util.Rn(5, 8)))
+	c.ToPNG(cfg.OutURL())
+}
+
+func CirclesGrid(cfg *models.Config) {
+	rand.Seed(time.Now().Unix())
+	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
+	c.SetBackground(util.RnColor())
+	c.FillBackground()
+	c.SetColorSchema(util.RnColorScheme())
+	c.SetLineWidth(2.0)
+	c.Draw(arts.NewCircleGrid(4, 6))
 	c.ToPNG(cfg.OutURL())
 }
 

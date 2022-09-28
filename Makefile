@@ -17,6 +17,9 @@ try: build
 	./art try
 	#open output/merged/*
 
+circles_grid: build
+	./art circles grid -c 10 -f input/circle.json
+
 circles_gradient: build
 	./art circles gradient -c 7 -f input/circle.json
 
@@ -36,8 +39,11 @@ domain: build
 hole: build
 	./art hole -c 10 -f input/basic.json
 
+julia: build
+	./art julia -c 10 -f input/basic.json
+
 spiral_square: build
-	./art squares spiral -c 10 -f input/basic.json
+	./art squares spiral -c 20 -f input/basic.json
 
 
 store:

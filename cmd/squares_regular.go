@@ -20,7 +20,7 @@ var squaresRegularCmd = &cobra.Command{
 
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		for i := 0; i < 3; i++ {
+		for i := 0; i < 20; i++ {
 			samples.Square(fmt.Sprintf("square-%d", i))
 		}
 

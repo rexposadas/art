@@ -2,11 +2,11 @@
   "type": "circle",
   "out": {
     "prefix": "circle",
-    "dir": "output/generated/circles"
+    "dir": "output"
   },
   "canvas": {
-    "width": 1000,
-    "height": 1000
+    "width": 1080,
+    "height": 1080
   },
   "colors": {
     "scheme": [
