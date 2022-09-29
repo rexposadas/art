@@ -3,7 +3,6 @@ package samples
 import (
 	"art/models"
 	"art/util"
-	"fmt"
 	"github.com/jdxyw/generativeart"
 	"github.com/jdxyw/generativeart/arts"
 	"github.com/jdxyw/generativeart/common"
@@ -23,6 +22,23 @@ func Circles(cfg *models.Config) {
 	c.ToPNG(cfg.OutURL())
 }
 
+func CirclesDot(cfg *models.Config) {
+	rand.Seed(time.Now().Unix())
+	colors := []color.RGBA{
+		{0xFF, 0xBE, 0x0B, 0xFF},
+		{0xFB, 0x56, 0x07, 0xFF},
+		{0xFF, 0x00, 0x6E, 0xFF},
+		{0x83, 0x38, 0xEC, 0xFF},
+		{0x3A, 0x86, 0xFF, 0xFF},
+	}
+	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
+	c.SetBackground(util.RnColor())
+	c.FillBackground()
+	c.SetColorSchema(colors)
+	c.Draw(arts.NewDotsWave(util.Rn(250, 350)))
+	c.ToPNG(cfg.OutURL())
+}
+
 func CirclesGrid(cfg *models.Config) {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
@@ -34,23 +50,12 @@ func CirclesGrid(cfg *models.Config) {
 	c.ToPNG(cfg.OutURL())
 }
 
-func CircleGradient(filename string) {
+func CircleGradient(cfg *models.Config) {
 	rand.Seed(time.Now().Unix())
-	colors := []color.RGBA{
-		{0x11, 0x60, 0xC6, 0xFF},
-		{0xFD, 0xD9, 0x00, 0xFF},
-		{0xF5, 0xB4, 0xF8, 0xFF},
-		{0xEF, 0x13, 0x55, 0xFF},
-		{0xF4, 0x9F, 0x0A, 0xFF},
-	}
-	c := generativeart.NewCanva(500, 500)
-	c.SetBackground(common.White)
+	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
+	c.SetBackground(util.RnBackground())
 	c.FillBackground()
-	c.SetColorSchema(colors)
-	c.Draw(arts.NewColorCircle2(30))
-	c.ToPNG(fmt.Sprintf("output/%s.png", filename))
-}
-
-func oldBackgroup() color.RGBA {
-	return color.RGBA{8, 10, 20, 255}
+	c.SetColorSchema(util.RnColorScheme())
+	c.Draw(arts.NewColorCircle2(util.Rn(25, 35)))
+	c.ToPNG(cfg.OutURL())
 }

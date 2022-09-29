@@ -25,5 +25,4 @@ func Julia(cfg *models.Config) {
 	c.FillBackground()
 	c.Draw(arts.NewJulia(julia1, 40, 1.5, 1.5))
 	c.ToPNG(cfg.OutURL())
-
 }

@@ -9,6 +9,7 @@ import (
 	"art/samples"
 	"art/util/require"
 	"github.com/spf13/cobra"
+	"sync"
 )
 
 // domainCmd represents the domain command
@@ -23,10 +24,19 @@ domain
 		require.FileName(file)
 		total := require.Count(count)
 
+		var wg sync.WaitGroup
+
 		cfg := models.NewConfig(file)
 		for i := 0; i < total; i++ {
-			samples.Domain(cfg)
+			wg.Add(1)
+
+			go func() {
+				defer wg.Done()
+				samples.Domain(cfg)
+			}()
 		}
+
+		wg.Wait()
 	},
 }
 

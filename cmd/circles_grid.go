@@ -1,7 +1,3 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
@@ -28,6 +24,7 @@ to quickly create a Cobra application.`,
 		cfg := models.NewConfig(file)
 		for i := 0; i < total; i++ {
 			samples.CirclesGrid(cfg)
+			samples.CirclesDot(cfg)
 		}
 
 	},

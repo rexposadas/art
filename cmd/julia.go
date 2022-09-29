@@ -5,6 +5,7 @@ import (
 	"art/samples"
 	"art/util/require"
 	"github.com/spf13/cobra"
+	"sync"
 )
 
 // juliaCmd represents the julia command
@@ -21,11 +22,18 @@ to quickly create a Cobra application.`,
 		require.FileName(file)
 		total := require.Count(count)
 
+		var wg sync.WaitGroup
+
 		cfg := models.NewConfig(file)
 		for i := 0; i < total; i++ {
-			samples.Julia(cfg)
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+				samples.Julia(cfg)
+			}()
 		}
 
+		wg.Wait()
 	},
 }
 

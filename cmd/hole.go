@@ -9,6 +9,7 @@ import (
 	"art/samples"
 	"art/util/require"
 	"github.com/spf13/cobra"
+	"sync"
 )
 
 // holeCmd represents the hole command
@@ -25,23 +26,23 @@ to quickly create a Cobra application.`,
 		require.FileName(file)
 		total := require.Count(count)
 
+		var wg sync.WaitGroup
+
 		cfg := models.NewConfig(file)
 		for i := 0; i < total; i++ {
-			samples.Hole(cfg)
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+
+				samples.Hole(cfg)
+			}()
+
 		}
+
+		wg.Wait()
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(holeCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// holeCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// holeCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

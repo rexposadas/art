@@ -21,7 +21,7 @@ circles_grid: build
 	./art circles grid -c 10 -f input/circle.json
 
 circles_gradient: build
-	./art circles gradient -c 7 -f input/circle.json
+	./art circles gradient -c 20 -f input/circle.json
 
 circles: build
 	./art circles regular -c 7 -f input/circle.json

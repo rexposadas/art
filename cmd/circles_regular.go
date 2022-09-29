@@ -9,6 +9,7 @@ import (
 	"art/samples"
 	"art/util/require"
 	"github.com/spf13/cobra"
+	"sync"
 )
 
 // circlesRegularCmd represents the circleregular command
@@ -20,10 +21,19 @@ var circlesRegularCmd = &cobra.Command{
 		require.FileName(file)
 		total := require.Count(count)
 
+		var wg sync.WaitGroup
+
 		cfg := models.NewConfig(file)
 		for i := 0; i < total; i++ {
-			samples.Circles(cfg)
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+
+				samples.Circles(cfg)
+			}()
 		}
+
+		wg.Wait()
 	},
 }
 
