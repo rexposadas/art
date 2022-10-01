@@ -5,6 +5,7 @@ import (
 	"art/samples"
 	"art/util/require"
 	"github.com/spf13/cobra"
+	"sync"
 )
 
 // circlesgridCmd represents the circlesgrid command
@@ -21,12 +22,20 @@ to quickly create a Cobra application.`,
 		require.FileName(file)
 		total := require.Count(count)
 
+		var wg sync.WaitGroup
+
 		cfg := models.NewConfig(file)
 		for i := 0; i < total; i++ {
-			samples.CirclesGrid(cfg)
-			samples.CirclesDot(cfg)
+			wg.Add(1)
+
+			go func() {
+				defer wg.Done()
+				samples.CirclesGrid(cfg)
+			}()
+
 		}
 
+		wg.Wait()
 	},
 }
 
