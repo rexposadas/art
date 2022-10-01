@@ -25,13 +25,16 @@ circles_gradient: build
 
 circles: build
 	./art circles regular -c 7 -f input/circle.json
-	./art circles gradient -c 7 -f input/circle-spring.json
 
 squares: build
 	./art squares regular
 
 perls: build
 	./art perls -c 10 -f input/basic.json
+
+
+junas: build
+	./art junas -c 10 -f input/basic.json
 
 domain: build
 	./art domain -c 10 -f input/basic.json

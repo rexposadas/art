@@ -16,6 +16,8 @@ func RnColorScheme() []color.RGBA {
 		common.DarkRed,
 		common.Outdoors,
 		common.Sleek,
+		common.Citrus,
+		common.DarkPink,
 	}
 
 	return schemes[rand.Intn(len(schemes))]
