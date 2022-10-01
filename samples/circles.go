@@ -59,3 +59,17 @@ func CircleGradient(cfg *models.Config) {
 	c.Draw(arts.NewColorCircle2(util.Rn(25, 35)))
 	c.ToPNG(cfg.OutURL())
 }
+
+func CirclesLoop(cfg *models.Config) {
+	rand.Seed(time.Now().Unix())
+	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
+	c.SetBackground(util.RnBackground())
+	c.SetLineWidth(1)
+	c.SetLineColor(util.RnColor())
+	c.SetAlpha(30)
+	c.SetIterations(1000)
+	c.FillBackground()
+	c.Draw(arts.NewCircleLoop(100))
+	c.ToPNG(cfg.OutURL())
+
+}
