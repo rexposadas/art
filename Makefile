@@ -33,6 +33,9 @@ perls: build
 	./art perls -c 10 -f input/basic.json
 
 
+smoke: build
+	./art smoke -c 10 -f input/basic.json
+
 junas: build
 	./art junas -c 10 -f input/basic.json
 
