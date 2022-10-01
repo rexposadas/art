@@ -39,6 +39,9 @@ smoke: build
 junas: build
 	./art junas -c 10 -f input/basic.json
 
+dot: build
+	./art dot -c 10 -f input/basic.json
+
 domain: build
 	./art domain -c 10 -f input/basic.json
 
