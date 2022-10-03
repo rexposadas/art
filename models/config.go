@@ -21,6 +21,37 @@ type Colors struct {
 	Scheme []color.RGBA
 }
 
+func DefaultConfig() *Config {
+	defaultCfg := []byte(`
+{
+  "out": {
+    "prefix": "samples",
+    "dir": ""
+  },
+  "canvas": {
+    "width": 300,
+    "height": 300
+  },
+  "colors": {
+    "scheme": [
+      {"r":111, "g": 84, "b": 140, "a":  255},
+      {"r":92, "g": 204, "b": 206, "a":  255},
+      {"r":178, "g": 162, "b": 150, "a":  255}
+    ]
+  }
+}`)
+
+	var cfg Config
+
+	if err := json.Unmarshal(defaultCfg, &cfg); err != nil {
+		return nil
+	}
+
+	log.Printf("%+v", cfg)
+
+	return &cfg
+}
+
 func NewConfig(filename string) *Config {
 
 	cfgFile, err := os.Open(filename)
@@ -46,7 +77,13 @@ func NewConfig(filename string) *Config {
 func (cfg Config) OutURL() string {
 
 	// We default to PNG , for now.
-	url := fmt.Sprintf("%s/%s-%s.png", cfg.Out.Dir, cfg.Out.Prefix, util.RnID())
+
+	var url string
+	if cfg.Out.Dir == "" {
+		url = fmt.Sprintf("%s-%s.png", cfg.Out.Prefix, util.RnID())
+	} else {
+		url = fmt.Sprintf("%s/%s-%s.png", cfg.Out.Dir, cfg.Out.Prefix, util.RnID())
+	}
 	return url
 }
 

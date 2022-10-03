@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"art/models"
+	"art/samples"
 	"github.com/spf13/cobra"
 )
 
@@ -12,6 +14,7 @@ var samplesCmd = &cobra.Command{
 generate the samples we use
 `,
 	Run: func(cmd *cobra.Command, args []string) {
+		samples.Circles(models.DefaultConfig())
 	},
 }
 
