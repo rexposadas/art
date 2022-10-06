@@ -26,7 +26,7 @@ func DefaultConfig() *Config {
 {
   "out": {
     "prefix": "samples",
-    "dir": ""
+    "dir": "output"
   },
   "canvas": {
     "width": 300,

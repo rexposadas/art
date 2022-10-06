@@ -8,7 +8,9 @@ That creates directory called "output" with art you just generated.
 
 If you are on a mac you can open the files with `open output/*.png`
 
-<show image of the call> 
+![](images/samples-669a073e.png)
+
+![](images/samples-eb31e19c.png)
 
 # Using more options 
 

@@ -36,6 +36,11 @@ perls: build
 	./art perls -c 10 -f input/basic.json
 
 
+
+samples: build
+	./art samples -c 10 -f input/basic.json
+
+
 smoke: build
 	./art smoke -c 10 -f input/basic.json
 
@@ -66,9 +71,6 @@ store:
 	mkdir output/generated
 	mkdir output/generated/circle
 
-
-samples: build
-	./art samples
 
 clean:
 	@rm output/*.png &
