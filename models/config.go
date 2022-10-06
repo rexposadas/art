@@ -47,8 +47,6 @@ func DefaultConfig() *Config {
 		return nil
 	}
 
-	log.Printf("%+v", cfg)
-
 	return &cfg
 }
 

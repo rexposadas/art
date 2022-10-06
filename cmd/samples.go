@@ -13,7 +13,10 @@ var samplesCmd = &cobra.Command{
 	Use:   "samples",
 	Short: "generate samples",
 	Long: `
-generate the samples we use
+		generate the samples.
+
+Usage: 
+	./art samples
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		if err := util.MakeDefaultDir(); err != nil {
@@ -22,7 +25,6 @@ generate the samples we use
 		}
 
 		samples.Circles(models.DefaultConfig())
-		samples.Dot(models.DefaultConfig())
 		samples.SpiralSquare(models.DefaultConfig())
 	},
 }
