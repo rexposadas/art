@@ -1,6 +1,6 @@
 package main
 
-import "art/cmd"
+import "github.com/rexposadas/art/cmd"
 
 func main() {
 	cmd.Execute()

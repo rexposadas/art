@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	"art/util"
-	"art/util/csv"
-	"art/util/require"
 	"fmt"
+	"github.com/rexposadas/art/util"
+	"github.com/rexposadas/art/util/csv"
+	"github.com/rexposadas/art/util/require"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"log"

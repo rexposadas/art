@@ -1,12 +1,8 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
-	"art/samples"
 	"fmt"
+	"github.com/rexposadas/art/samples"
 
 	"github.com/spf13/cobra"
 )

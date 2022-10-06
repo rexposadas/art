@@ -1,10 +1,11 @@
 package cmd
 
 import (
-	"art/models"
-	"art/samples"
-	"art/util/require"
 	"sync"
+
+	"github.com/rexposadas/art/models"
+	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/util/require"
 
 	"github.com/spf13/cobra"
 )

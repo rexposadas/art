@@ -1,9 +1,9 @@
 package models
 
 import (
-	"art/util"
 	"encoding/json"
 	"fmt"
+	"github.com/rexposadas/art/util"
 	"image/color"
 	"io/ioutil"
 	"log"

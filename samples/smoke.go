@@ -1,9 +1,9 @@
 package samples
 
 import (
-	"art/models"
-	"art/util"
 	"github.com/jdxyw/generativeart/common"
+	"github.com/rexposadas/art/models"
+	"github.com/rexposadas/art/util"
 	"math/rand"
 	"time"
 

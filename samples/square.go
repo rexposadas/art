@@ -1,10 +1,10 @@
 package samples
 
 import (
-	"art/util"
 	"fmt"
 	"github.com/jdxyw/generativeart"
 	"github.com/jdxyw/generativeart/arts"
+	"github.com/rexposadas/art/util"
 	"math/rand"
 	"time"
 )

@@ -1,13 +1,9 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
-	"art/models"
-	"art/samples"
-	"art/util/require"
+	"github.com/rexposadas/art/models"
+	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/util/require"
 	"sync"
 
 	"github.com/spf13/cobra"
