@@ -2,9 +2,11 @@ An easy way to generate 2d art with Go.
 
 # Quick start
 
-`go build -o ./art && art circles`
+`go build -o ./art && art samples`
 
-That creates a `circles.png` file in the current directory. That looks something like this: 
+That creates directory called "output" with art you just generated. 
+
+If you are on a mac you can open the files with `open output/*.png`
 
 <show image of the call> 
 
