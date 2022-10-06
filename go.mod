@@ -1,4 +1,4 @@
-module art
+module github.com/rexposadas/art
 
 go 1.18
 

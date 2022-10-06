@@ -14,5 +14,7 @@ If you are on a mac you can open the files with `open output/*.png`
 
 # Using more options 
 
-You can view the options you can have by `art help`
+You can view the options you can have by: 
+
+`./art`
 
