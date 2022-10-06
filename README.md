@@ -4,7 +4,7 @@ An easy way to generate 2d art with Go.
 
 `go build -o ./art && art samples`
 
-That creates directory called "output" with art you just generated. 
+That creates a directory called "output" with art you just generated. 
 
 If you are on a mac you can open the files with `open output/*.png`
 
