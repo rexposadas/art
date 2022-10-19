@@ -11,9 +11,8 @@ import (
 	"os"
 )
 
-func Merge(bgfile, fgfile string) {
-	//bgfile := fmt.Sprintf(filename)
-	image1, err := os.Open(bgfile)
+func Merge(bgFile, fgFile string) {
+	image1, err := os.Open(bgFile)
 	if err != nil {
 		log.Fatalf("failed to open: %s", err)
 	}
@@ -24,7 +23,7 @@ func Merge(bgfile, fgfile string) {
 	}
 	defer image1.Close()
 
-	watermark, err := os.Open(fgfile)
+	watermark, err := os.Open(fgFile)
 	if err != nil {
 		log.Fatalf("failed to open: %s", err)
 	}
@@ -40,16 +39,16 @@ func Merge(bgfile, fgfile string) {
 
 	draw.Draw(image3, b, first, image.ZP, draw.Src)
 
-	mask := image.NewUniform(color.Alpha{128})
+	mask := image.NewUniform(color.Alpha{A: 128})
 
 	draw.DrawMask(image3, wtrMark.Bounds().Add(offset), wtrMark,
-		image.Point{-100, -100}, mask, image.Point{-200, -200}, draw.Over)
+		image.Point{X: -100, Y: -100}, mask, image.Point{X: -200, Y: -200}, draw.Over)
 
 	f := fmt.Sprintf("output/merged/%s.png", RnID())
 	third, err := os.Create(f)
 	if err != nil {
 		log.Fatalf("failed to create: %s", err)
 	}
-	jpeg.Encode(third, image3, &jpeg.Options{jpeg.DefaultQuality})
+	jpeg.Encode(third, image3, &jpeg.Options{Quality: jpeg.DefaultQuality})
 	defer third.Close()
 }
