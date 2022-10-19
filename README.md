@@ -1,4 +1,4 @@
-Art is an CLI which makes it easy to generated 2D art in Go.  
+Art is a CLI which makes it easy to generated 2D art in Go.  
 
 # Quick start
 
