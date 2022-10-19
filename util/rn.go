@@ -45,15 +45,10 @@ func RnBackground() color.RGBA {
 		common.Aquamarine,
 		common.PaleTurquoise,
 		common.Plum,
+		common.AntiqueWhite,
 	}
 
 	return bg[rand.Intn(len(bg))]
-}
-
-// Rn8 returns a random number for a given range.
-func Rn8(min, max int) uint8 {
-	rand.Seed(time.Now().UnixNano())
-	return uint8(rand.Intn(max-min+1) + min)
 }
 
 // Rn returns a random number for a given range.

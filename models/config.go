@@ -75,13 +75,16 @@ func NewConfig(filename string) *Config {
 func (cfg Config) OutURL() string {
 
 	// We default to PNG , for now.
-
 	var url string
+
 	if cfg.Out.Dir == "" {
-		url = fmt.Sprintf("%s-%s.png", cfg.Out.Prefix, util.RnID())
+		url = fmt.Sprintf("%s", cfg.Out.Prefix)
 	} else {
-		url = fmt.Sprintf("%s/%s-%s.png", cfg.Out.Dir, cfg.Out.Prefix, util.RnID())
+		url = fmt.Sprintf("%s/%s", cfg.Out.Dir, cfg.Out.Prefix)
 	}
+
+	url = fmt.Sprintf("%s-%d_x_%d_%s.png", url, cfg.Canvas.Width, cfg.Canvas.Height, util.RnID())
+
 	return url
 }
 

@@ -1,8 +1,8 @@
 package cmd
 
 import (
+	"github.com/rexposadas/art/models"
 	"github.com/spf13/cobra"
-	"log"
 )
 
 // circlesCmd represents the circles command
@@ -11,7 +11,9 @@ var circlesCmd = &cobra.Command{
 	Short: "circles",
 	Long:  `circle commands`,
 	Run: func(cmd *cobra.Command, args []string) {
-		log.Println("look into the sub commands for actual generated art")
+
+		// Default command to create circles.
+		circlesRegular(models.DefaultConfig(), 5)
 	},
 }
 

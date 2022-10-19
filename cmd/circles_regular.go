@@ -17,20 +17,25 @@ var circlesRegularCmd = &cobra.Command{
 		require.FileName(file)
 		total := require.Count(count)
 
-		var wg sync.WaitGroup
-
 		cfg := models.NewConfig(file)
-		for i := 0; i < total; i++ {
-			wg.Add(1)
-			go func() {
-				defer wg.Done()
 
-				samples.Circles(cfg)
-			}()
-		}
-
-		wg.Wait()
+		circlesRegular(cfg, total)
 	},
+}
+
+func circlesRegular(cfg *models.Config, count int) {
+
+	var wg sync.WaitGroup
+	for i := 0; i < count; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+
+			samples.Circles(cfg)
+		}()
+	}
+
+	wg.Wait()
 }
 
 func init() {
