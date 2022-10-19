@@ -1,6 +1,6 @@
 Art is a CLI which makes it easy to generated 2D art in Go.
 
-This CLI makes heavy use of this [repository](github.com/jdxyw/generativeart): `github.com/jdxyw/generativeart`.
+This CLI makes heavy use of this [repository](https://github.com/jdxyw/generativeart): `github.com/jdxyw/generativeart`.
 
 # Quick start
 
