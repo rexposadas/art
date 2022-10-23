@@ -3,14 +3,12 @@ package cmd
 import (
 	"fmt"
 	"github.com/rexposadas/art/util"
-	"github.com/rexposadas/art/util/csv"
 	"github.com/rexposadas/art/util/require"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"log"
 )
 
-// mergeCmd represents the merge command
 var mergeCmd = &cobra.Command{
 	Use:   "merge",
 	Short: "automated way of merging what we have so far",
@@ -23,14 +21,7 @@ var mergeCmd = &cobra.Command{
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		require.FileName(file)
-
-		list := csv.ParseCSV(file)
-		circles := fileList("output/generated/s")
-		for _, line := range list {
-			for _, c := range circles {
-				util.Merge(line[0], c)
-			}
-		}
+		util.Merge("new.png", "new.png")
 	},
 }
 

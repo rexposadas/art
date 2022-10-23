@@ -1,18 +1,10 @@
 {
-  "type": "general",
   "out": {
-    "prefix": "general",
+    "prefix": "sample",
     "dir": "output"
   },
   "canvas": {
     "width": 1080,
     "height": 1080
-  },
-  "colors": {
-    "scheme": [
-      {"r":111, "g": 84, "b": 140, "a":  255},
-      {"r":92, "g": 204, "b": 206, "a":  255},
-      {"r":178, "g": 162, "b": 150, "a":  255}
-    ]
   }
 }

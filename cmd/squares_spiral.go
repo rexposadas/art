@@ -3,31 +3,42 @@ package cmd
 import (
 	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/util"
 	"github.com/rexposadas/art/util/require"
 	"github.com/spf13/cobra"
+	"image/color"
+	"strings"
 )
 
-// squaresspiralCmd represents the squaresspiral command
-var squaresspiralCmd = &cobra.Command{
+var squaresSpiralCmd = &cobra.Command{
 	Use:   "spiral",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "squares making a spiral",
+	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		require.FileName(file)
 		total := require.Count(count)
 
 		cfg := models.NewConfig(file)
 		for i := 0; i < total; i++ {
-			samples.SpiralSquare(cfg)
+			out := samples.SpiralSquare(cfg)
+			singWithText(out)
 		}
 	},
 }
 
+func singWithText(out string) {
+	org := util.PathToImage(out)
+	util.SignWithText(org, color.White, out)
+	out = strings.Replace(out, ".png", "_black.png", 1)
+	util.SignWithText(org, color.Black, out)
+}
+
+func sign(out, sig string) {
+	pic := util.PathToImage(out)
+	signature := util.PathToImage(sig)
+	util.Sign(pic, signature)
+}
+
 func init() {
-	squaresCmd.AddCommand(squaresspiralCmd)
+	squaresCmd.AddCommand(squaresSpiralCmd)
 }

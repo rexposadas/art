@@ -30,7 +30,8 @@ to quickly create a Cobra application.`,
 			go func() {
 				defer wg.Done()
 
-				samples.Hole(cfg)
+				out := samples.Hole(cfg)
+				singWithText(out)
 			}()
 
 		}

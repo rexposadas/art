@@ -6,19 +6,26 @@ import (
 	"github.com/jdxyw/generativeart/common"
 	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util"
+	"log"
 
 	"math/rand"
 	"time"
 )
 
-func Circles(cfg *models.Config) {
+func Circles(cfg *models.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(common.Black)
 	c.FillBackground()
 	c.SetColorSchema(util.RnColorScheme())
 	c.Draw(arts.NewCircleLoop2(util.Rn(5, 8)))
-	c.ToPNG(cfg.OutURL())
+
+	url := cfg.OutURL()
+	if err := c.ToPNG(url); err != nil {
+		log.Printf("failed to generate circle gradient images: %s", err)
+	}
+
+	return url
 }
 
 func CirclesGrid(cfg *models.Config) {
@@ -29,17 +36,26 @@ func CirclesGrid(cfg *models.Config) {
 	c.SetColorSchema(util.RnColorScheme())
 	c.SetLineWidth(2.0)
 	c.Draw(arts.NewCircleGrid(4, 6))
-	c.ToPNG(cfg.OutURL())
+	if err := c.ToPNG(cfg.OutURL()); err != nil {
+		log.Printf("failed to generate circle gradient images: %s", err)
+	}
 }
 
-func CircleGradient(cfg *models.Config) {
+func CircleGradient(cfg *models.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnBackground())
 	c.FillBackground()
 	c.SetColorSchema(util.RnColorScheme())
 	c.Draw(arts.NewColorCircle2(util.Rn(25, 35)))
-	c.ToPNG(cfg.OutURL())
+
+	out := cfg.OutURL()
+	if err := c.ToPNG(out); err != nil {
+		log.Printf("failed to generate circle gradient images: %s", err)
+		return ""
+	}
+
+	return out
 }
 
 func CirclesLoop(cfg *models.Config) {
@@ -52,6 +68,7 @@ func CirclesLoop(cfg *models.Config) {
 	c.SetIterations(1000)
 	c.FillBackground()
 	c.Draw(arts.NewCircleLoop(100))
-	c.ToPNG(cfg.OutURL())
-
+	if err := c.ToPNG(cfg.OutURL()); err != nil {
+		log.Printf("failed to generate circle gradient images: %s", err)
+	}
 }

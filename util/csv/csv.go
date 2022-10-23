@@ -11,7 +11,7 @@ import (
 // ParseCSV returns a slice of lines.
 // A line is a list in the CSV.
 // We don't return an error.  Panic whenever we encounter an error.
-// This is OK since so we don't continue processing if we can't
+// This is OK since we don't continue processing if we can't
 // process the file.
 func ParseCSV(filename string) [][]string {
 	if filename == "" {

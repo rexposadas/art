@@ -10,7 +10,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// circlesGradientCmd .
 var circlesGradientCmd = &cobra.Command{
 	Use:   "gradient",
 	Short: "circles with gradient",
@@ -27,7 +26,8 @@ var circlesGradientCmd = &cobra.Command{
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
-				samples.CircleGradient(cfg)
+				out := samples.CircleGradient(cfg)
+				singWithText(out)
 			}()
 		}
 

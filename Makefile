@@ -7,7 +7,7 @@ all: build
 	make gift
 	make circle
 
-merge: build
+"github.com": build
 	/tmp/art merge -f input/list.csv
 
 gift: build
@@ -18,16 +18,16 @@ try: build
 	#open output/merged/*
 
 circles_grid: build
-	/tmp/art circles grid -c 10 -f input/circle.json
+	/tmp/art circles grid -c 10 -f input/basic.json
 
 circles_gradient: build
-	/tmp/art circles gradient -c 20 -f input/circle.json
+	/tmp/art circles gradient -c 5 -f input/basic.json
 
 circles_loop: build
-	/tmp/art circles loop -c 20 -f input/circle.json
+	/tmp/art circles loop -c 20 -f input/basic.json
 
 circles: build
-#	/tmp/art circles regular -c 7 -f input/circle.json
+#	/tmp/art circles regular -c 7 -f input/basic.json
 	/tmp/art circles
 
 squares: build
@@ -35,6 +35,14 @@ squares: build
 
 perls: build
 	/tmp/art perls -c 10 -f input/basic.json
+
+
+for_sale: build
+	/tmp/art circles regular -c 5 -f input/basic.json
+	/tmp/art circles gradient -c 5 -f input/basic.json
+	/tmp/art hole -c 5 -f input/basic.json
+	/tmp/art squares spiral -c 5 -f input/basic.json
+	/tmp/art squares regular -c 5 -f input/basic.json
 
 
 
@@ -49,7 +57,7 @@ junas: build
 	/tmp/art junas -c 10 -f input/basic.json
 
 dot: build
-	/tmp/art dot -c 10 -f input/basic.json
+	/tmp/art dot -c 5 -f input/basic.json
 
 domain: build
 	/tmp/art domain -c 10 -f input/basic.json
@@ -60,8 +68,15 @@ hole: build
 julia: build
 	/tmp/art julia -c 10 -f input/basic.json
 
-spiral_square: build
-	/tmp/art squares spiral -c 20 -f input/basic.json
+spiral: build
+	#rm output/*.png
+	/tmp/art squares spiral -c 5 -f input/basic.json
+	open output/*.png
+
+merge: build
+	rm output/merged/*
+	/tmp/art merge 	-f input/list.csv
+	open output/merged/*
 
 
 store:

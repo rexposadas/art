@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func Hole(cfg *models.Config) {
+func Hole(cfg *models.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnBackground())
@@ -17,5 +17,9 @@ func Hole(cfg *models.Config) {
 	c.SetColorSchema(util.RnColorScheme())
 	c.SetIterations(1200)
 	c.Draw(arts.NewPixelHole(60))
-	c.ToPNG(cfg.OutURL())
+
+	url := cfg.OutURL()
+	c.ToPNG(url)
+
+	return url
 }
