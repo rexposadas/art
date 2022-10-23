@@ -30,6 +30,7 @@ func Dot(cfg *models.Config) string {
 	c.FillBackground()
 	c.Draw(arts.NewDotLine(100, 20, 50, false))
 
+	cfg.Out.Prefix = "dot"
 	out := cfg.OutURL()
 	if err := c.ToPNG(out); err != nil {
 		log.Printf("failed to generate dot images: %s", err)

@@ -9,13 +9,17 @@ import (
 	"time"
 )
 
-func Perls(cfg *models.Config) {
+func Perls(cfg *models.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnColor())
 	c.FillBackground()
 	c.SetColorSchema(util.RnColorScheme())
-	//c.Draw(arts.NewContourLine(500))
 	c.Draw(arts.NewContourLine(util.Rn(480, 520)))
-	c.ToPNG(cfg.OutURL())
+
+	cfg.Out.Prefix = "perls"
+	url := cfg.OutURL()
+	c.ToPNG(url)
+
+	return url
 }

@@ -3,19 +3,17 @@ ts := $(shell /bin/date "+%Y-%m-%d-%H-%M-%S")
 build:
 	go build -o /tmp/art
 
-all: build
-	make gift
-	make circle
-
-"github.com": build
-	/tmp/art merge -f input/list.csv
+for_sale: build
+	/tmp/art circles regular -c 5 -f input/basic.json
+	/tmp/art circles gradient -c 5 -f input/basic.json
+	/tmp/art hole -c 5 -f input/basic.json
+	/tmp/art squares spiral -c 5 -f input/basic.json
+	/tmp/art squares regular -c 5 -f input/basic.json
+	/tmp/art perls -c 5 -f input/basic.json
+	/tmp/art circles grid -c 5 -f input/basic.json
 
 gift: build
 	/tmp/art gift -f input/list.csv
-
-try: build
-	/tmp/art try
-	#open output/merged/*
 
 circles_grid: build
 	/tmp/art circles grid -c 10 -f input/basic.json
@@ -37,12 +35,7 @@ perls: build
 	/tmp/art perls -c 10 -f input/basic.json
 
 
-for_sale: build
-	/tmp/art circles regular -c 5 -f input/basic.json
-	/tmp/art circles gradient -c 5 -f input/basic.json
-	/tmp/art hole -c 5 -f input/basic.json
-	/tmp/art squares spiral -c 5 -f input/basic.json
-	/tmp/art squares regular -c 5 -f input/basic.json
+
 
 
 

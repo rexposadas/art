@@ -32,6 +32,14 @@ func RnColor() color.RGBA {
 		common.MediumAquamarine,
 		common.Plum,
 		common.Orange,
+		common.Aquamarine,
+		common.DarkSalmon,
+		common.Lavender,
+		common.LightGray,
+		common.LightPink,
+		common.Mintcream,
+		common.MistyRose,
+		common.Moccasin,
 	}
 
 	return schemes[rand.Intn(len(schemes))]

@@ -8,8 +8,7 @@ import (
 	"sync"
 )
 
-// circlesloopCmd represents the circlesloop command
-var circlesloopCmd = &cobra.Command{
+var circlesLoopCmd = &cobra.Command{
 	Use:   "loop",
 	Short: "",
 	Long:  ``,
@@ -33,5 +32,5 @@ var circlesloopCmd = &cobra.Command{
 }
 
 func init() {
-	circlesCmd.AddCommand(circlesloopCmd)
+	circlesCmd.AddCommand(circlesLoopCmd)
 }

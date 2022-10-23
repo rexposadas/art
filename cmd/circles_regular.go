@@ -8,7 +8,6 @@ import (
 	"sync"
 )
 
-// circlesRegularCmd represents the circleregular command
 var circlesRegularCmd = &cobra.Command{
 	Use:   "regular",
 	Short: "regular",

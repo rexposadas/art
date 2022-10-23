@@ -21,11 +21,16 @@ func cmap(r, m1, m2 float64) color.RGBA {
 	return rgb
 }
 
-func Domain(cfg *models.Config) {
+func Domain(cfg *models.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnBackground())
 	c.FillBackground()
 	c.Draw(arts.NewDomainWrap(0.01, 4, 4, 20, cmap))
-	c.ToPNG(cfg.OutURL())
+
+	cfg.Out.Prefix = "domain"
+	url := cfg.OutURL()
+	c.ToPNG(url)
+
+	return url
 }

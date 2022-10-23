@@ -18,6 +18,7 @@ func Hole(cfg *models.Config) string {
 	c.SetIterations(1200)
 	c.Draw(arts.NewPixelHole(60))
 
+	cfg.Out.Prefix = "hole"
 	url := cfg.OutURL()
 	c.ToPNG(url)
 

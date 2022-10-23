@@ -19,8 +19,9 @@ func SpiralSquare(cfg *models.Config) string {
 	c.FillBackground()
 	c.Draw(arts.NewSpiralSquare(40, 400, 0.05, true))
 
+	cfg.Out.Prefix = "spiral"
 	out := cfg.OutURL()
 	c.ToPNG(out)
-	
+
 	return out
 }
