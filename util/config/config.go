@@ -1,4 +1,4 @@
-package models
+package config
 
 import (
 	"encoding/json"
@@ -21,7 +21,7 @@ type Colors struct {
 	Scheme []color.RGBA
 }
 
-func DefaultConfig() *Config {
+func Default() *Config {
 	defaultCfg := []byte(`
 {
   "out": {
@@ -50,7 +50,7 @@ func DefaultConfig() *Config {
 	return &cfg
 }
 
-func NewConfig(filename string) *Config {
+func New(filename string) *Config {
 
 	cfgFile, err := os.Open(filename)
 	if err != nil {

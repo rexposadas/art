@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/samples"
 	"github.com/rexposadas/art/util"
+	"github.com/rexposadas/art/util/config"
 	"github.com/spf13/cobra"
 	"log"
 )
@@ -24,8 +24,8 @@ Usage:
 			return
 		}
 
-		samples.Circles(models.DefaultConfig())
-		samples.SpiralSquare(models.DefaultConfig())
+		samples.Circles(config.Default())
+		samples.SpiralSquare(config.Default())
 	},
 }
 

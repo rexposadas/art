@@ -1,14 +1,15 @@
 package samples
 
 import (
-	"github.com/jdxyw/generativeart"
-	"github.com/jdxyw/generativeart/arts"
-	"github.com/jdxyw/generativeart/common"
-	"github.com/rexposadas/art/models"
-	"github.com/rexposadas/art/util"
 	"image/color"
 	"math/rand"
 	"time"
+
+	"github.com/jdxyw/generativeart"
+	"github.com/jdxyw/generativeart/arts"
+	"github.com/jdxyw/generativeart/common"
+	"github.com/rexposadas/art/util"
+	"github.com/rexposadas/art/util/config"
 )
 
 func cmap(r, m1, m2 float64) color.RGBA {
@@ -21,7 +22,7 @@ func cmap(r, m1, m2 float64) color.RGBA {
 	return rgb
 }
 
-func Domain(cfg *models.Config) string {
+func Domain(cfg *config.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnBackground())
