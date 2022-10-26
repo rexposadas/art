@@ -84,4 +84,8 @@ To contribute create an issue and/or a pull request.
 [ ] Use Toml files instead of JSON files for config. TOML files are easier to read and are more concise. 
 
 
+## License
 
+This project is licensed under the MIT License.
+
+License can be found [here](LICENSE).
