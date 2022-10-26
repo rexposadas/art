@@ -1,3 +1,9 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/rexposadas/art)](https://goreportcard.com/report/github.com/rexposadas/art)
+[![GoDoc](https://godoc.org/github.com/rexposadas/art?status.svg)](https://godoc.org/github.com/rexposadas/art)
+[![Build Status](https://travis-ci.org/rexposadas/art.svg?branch=master)](https://travis-ci.org/rexposadas/art)
+[![Coverage Status](https://coveralls.io/repos/github/rexposadas/art/badge.svg?branch=master)](https://coveralls.io/github/rexposadas/art?branch=master)
+
+# Art
 Art is a CLI which makes it easy to generated 2D art in Go.
 
 This CLI makes heavy use of this [repository](https://github.com/jdxyw/generativeart): `github.com/jdxyw/generativeart`.
