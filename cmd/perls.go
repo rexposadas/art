@@ -22,14 +22,13 @@ var perlsCmd = &cobra.Command{
 	},
 }
 
-func perls(cfg *config.Config, count int) {
+func perls(cfg config.Config, count int) {
 	var wg sync.WaitGroup
 	for i := 0; i < count; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			out := models.Perls(cfg)
-			signWithText(out)
+			models.Perls(cfg)
 		}()
 	}
 

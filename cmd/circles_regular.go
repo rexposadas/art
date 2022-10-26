@@ -21,15 +21,14 @@ var circlesRegularCmd = &cobra.Command{
 	},
 }
 
-func circlesRegular(cfg *config.Config, count int) {
+func circlesRegular(cfg config.Config, count int) {
 	var wg sync.WaitGroup
 	for i := 0; i < count; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
 
-			out := models.Circles(cfg)
-			signWithText(out)
+			models.Circles(cfg)
 		}()
 	}
 

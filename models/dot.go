@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-func Dot(cfg *config.Config) string {
+func Dot(cfg config.Config) string {
 	if cfg.Canvas.Width < 2080 {
 		log.Printf("Canvas width is too small. Minimum is 2080. Got %d", cfg.Canvas.Width)
 		return ""

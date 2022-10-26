@@ -11,7 +11,7 @@ import (
 	"github.com/jdxyw/generativeart/arts"
 )
 
-func Smoke(cfg *config.Config) {
+func Smoke(cfg config.Config) {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(common.Black)

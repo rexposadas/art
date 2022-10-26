@@ -22,7 +22,7 @@ func cmap(r, m1, m2 float64) color.RGBA {
 	return rgb
 }
 
-func Domain(cfg *config.Config) string {
+func Domain(cfg config.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnBackground())

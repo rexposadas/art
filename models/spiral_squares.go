@@ -9,7 +9,7 @@ import (
 	"github.com/rexposadas/art/util"
 )
 
-func SpiralSquare(cfg *config.Config) string {
+func SpiralSquare(cfg config.Config) string {
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(common.MistyRose)
 	c.SetLineWidth(float64(util.Rn(5, 10)))

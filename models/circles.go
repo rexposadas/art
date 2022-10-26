@@ -1,18 +1,18 @@
 package models
 
 import (
+	"log"
+	"math/rand"
+	"time"
+
 	"github.com/jdxyw/generativeart"
 	"github.com/jdxyw/generativeart/arts"
 	"github.com/jdxyw/generativeart/common"
 	"github.com/rexposadas/art/util"
 	"github.com/rexposadas/art/util/config"
-	"log"
-
-	"math/rand"
-	"time"
 )
 
-func Circles(cfg *config.Config) string {
+func Circles(cfg config.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(common.Black)
@@ -29,7 +29,7 @@ func Circles(cfg *config.Config) string {
 	return url
 }
 
-func CirclesGrid(cfg *config.Config) string {
+func CirclesGrid(cfg config.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnColor())
@@ -48,7 +48,7 @@ func CirclesGrid(cfg *config.Config) string {
 	return url
 }
 
-func CircleGradient(cfg *config.Config) string {
+func CircleGradient(cfg config.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnColor())
@@ -66,7 +66,7 @@ func CircleGradient(cfg *config.Config) string {
 	return out
 }
 
-func CirclesLoop(cfg *config.Config) {
+func CirclesLoop(cfg config.Config) {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnBackground())

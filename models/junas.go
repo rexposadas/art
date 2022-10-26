@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-func Junas(cfg *config.Config) {
+func Junas(cfg config.Config) {
 
 	DarkRed := []color.RGBA{
 		util.RnColor(),

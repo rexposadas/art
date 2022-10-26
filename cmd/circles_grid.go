@@ -26,8 +26,8 @@ Circles with grid.
 
 			go func() {
 				defer wg.Done()
-				out := models.CirclesGrid(cfg)
-				signWithText(out)
+				models.CirclesGrid(cfg)
+
 			}()
 
 		}

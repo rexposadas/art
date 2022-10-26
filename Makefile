@@ -1,7 +1,17 @@
 ts := $(shell /bin/date "+%Y-%m-%d-%H-%M-%S")
 
 build:
-	go build -o /tmp/art
+	go build --race -o /tmp/art
+
+all: build
+	/tmp/art circles regular -c 2 -f input/small.json
+	/tmp/art circles gradient -c 2 -f input/small.json
+	/tmp/art circles grid -c 2 -f input/small.json
+	/tmp/art hole -c 2 -f input/small.json
+	/tmp/art perls -c 2 -f input/small.json
+	/tmp/art squares spiral -c 2 -f input/small.json
+	/tmp/art squares regular -c 2 -f input/small.json
+
 
 for_sale: build
 	/tmp/art circles regular -c 5 -f input/basic.json

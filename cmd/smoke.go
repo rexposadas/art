@@ -9,7 +9,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// smokeCmd represents the smoke command
 var smokeCmd = &cobra.Command{
 	Use:   "smoke",
 	Short: "",

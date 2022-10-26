@@ -26,8 +26,8 @@ var circlesGradientCmd = &cobra.Command{
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
-				out := models.CircleGradient(cfg)
-				signWithText(out)
+				models.CircleGradient(cfg)
+
 			}()
 		}
 

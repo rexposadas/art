@@ -17,7 +17,7 @@ func julia1(z complex128) complex128 {
 	return z
 }
 
-func Julia(cfg *config.Config) {
+func Julia(cfg config.Config) {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetIterations(800)

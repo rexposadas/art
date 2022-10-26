@@ -5,7 +5,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// circlesCmd represents the circles command
 var circlesCmd = &cobra.Command{
 	Use:   "circles",
 	Short: "circles",

@@ -29,8 +29,8 @@ var squaresRegularCmd = &cobra.Command{
 			go func() {
 				defer wg.Done()
 
-				out := models.Square(cfg)
-				signWithText(out)
+				models.Square(cfg)
+
 			}()
 
 		}

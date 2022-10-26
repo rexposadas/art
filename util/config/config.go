@@ -21,36 +21,28 @@ type Colors struct {
 	Scheme []color.RGBA
 }
 
-func Default() *Config {
+func Default() Config {
 	defaultCfg := []byte(`
 {
   "out": {
-    "prefix": "models",
+    "prefix": "sample",
     "dir": "output"
   },
   "canvas": {
     "width": 300,
     "height": 300
-  },
-  "colors": {
-    "scheme": [
-      {"r":111, "g": 84, "b": 140, "a":  255},
-      {"r":92, "g": 204, "b": 206, "a":  255},
-      {"r":178, "g": 162, "b": 150, "a":  255}
-    ]
   }
 }`)
 
 	var cfg Config
-
 	if err := json.Unmarshal(defaultCfg, &cfg); err != nil {
-		return nil
+		return Config{}
 	}
 
-	return &cfg
+	return cfg
 }
 
-func New(filename string) *Config {
+func New(filename string) Config {
 
 	cfgFile, err := os.Open(filename)
 	if err != nil {
@@ -68,7 +60,7 @@ func New(filename string) *Config {
 		log.Fatalf("failed to parse config %s", err)
 	}
 
-	return &cfg
+	return cfg
 }
 
 // OutURL returns the default file location
