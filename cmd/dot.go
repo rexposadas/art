@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"sync"
@@ -31,7 +31,7 @@ func dot(cfg *config.Config, count int) {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			samples.Dot(cfg)
+			models.Dot(cfg)
 		}()
 	}
 	wg.Wait()

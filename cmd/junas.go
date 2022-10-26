@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"sync"
@@ -30,7 +30,7 @@ to quickly create a Cobra application.`,
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
-				samples.Junas(cfg)
+				models.Junas(cfg)
 			}()
 		}
 

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"sync"
@@ -26,7 +26,7 @@ var smokeCmd = &cobra.Command{
 			go func() {
 				defer wg.Done()
 
-				samples.Smoke(cfg)
+				models.Smoke(cfg)
 			}()
 
 		}

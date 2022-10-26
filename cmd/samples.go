@@ -1,22 +1,22 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util"
 	"github.com/rexposadas/art/util/config"
 	"github.com/spf13/cobra"
 	"log"
 )
 
-// samplesCmd represents the samples command
+// samplesCmd represents the models command
 var samplesCmd = &cobra.Command{
-	Use:   "samples",
-	Short: "generate samples",
+	Use:   "models",
+	Short: "generate models",
 	Long: `
-		generate the samples.
+		generate the models.
 
 Usage: 
-	./art samples
+	./art models
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		if err := util.MakeDefaultDir(); err != nil {
@@ -24,8 +24,8 @@ Usage:
 			return
 		}
 
-		samples.Circles(config.Default())
-		samples.SpiralSquare(config.Default())
+		models.Circles(config.Default())
+		models.SpiralSquare(config.Default())
 	},
 }
 

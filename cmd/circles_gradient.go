@@ -4,7 +4,7 @@ import (
 	"github.com/rexposadas/art/util/config"
 	"sync"
 
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/require"
 
 	"github.com/spf13/cobra"
@@ -26,7 +26,7 @@ var circlesGradientCmd = &cobra.Command{
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
-				out := samples.CircleGradient(cfg)
+				out := models.CircleGradient(cfg)
 				signWithText(out)
 			}()
 		}

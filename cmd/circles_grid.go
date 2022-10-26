@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"github.com/spf13/cobra"
@@ -26,7 +26,7 @@ Circles with grid.
 
 			go func() {
 				defer wg.Done()
-				out := samples.CirclesGrid(cfg)
+				out := models.CirclesGrid(cfg)
 				signWithText(out)
 			}()
 

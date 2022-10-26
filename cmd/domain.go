@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"github.com/spf13/cobra"
@@ -28,7 +28,7 @@ domain
 
 			go func() {
 				defer wg.Done()
-				samples.Domain(cfg)
+				models.Domain(cfg)
 			}()
 		}
 

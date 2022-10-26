@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/jdxyw/generativeart"
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
@@ -21,7 +21,7 @@ var squaresSpiralCmd = &cobra.Command{
 
 		cfg := config.New(file)
 		for i := 0; i < total; i++ {
-			out := samples.SpiralSquare(cfg)
+			out := models.SpiralSquare(cfg)
 			signWithText(out)
 
 		}
@@ -61,14 +61,6 @@ func signWithText(out string) {
 	org := util.PathToImage(out)
 
 	newCanva := generativeart.NewCanva(1080, 1080)
-
-	//newCanva.SetBackground(common.MistyRose)
-	//newCanva.SetLineWidth(float64(util.Rn(5, 10)))
-	//newCanva.SetLineColor(util.RnColor())
-	//newCanva.SetColorSchema(util.RnColorScheme())
-	//newCanva.SetForeground(util.RnColor())
-	//newCanva.FillBackground()
-
 	newImg := newCanva.Img()
 
 	for x := 0; x < org.Bounds().Max.X; x++ {

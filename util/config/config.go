@@ -25,7 +25,7 @@ func Default() *Config {
 	defaultCfg := []byte(`
 {
   "out": {
-    "prefix": "samples",
+    "prefix": "models",
     "dir": "output"
   },
   "canvas": {

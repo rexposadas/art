@@ -1,4 +1,4 @@
-package samples
+package models
 
 import (
 	"image/color"

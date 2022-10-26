@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"sync"
@@ -29,7 +29,7 @@ var squaresRegularCmd = &cobra.Command{
 			go func() {
 				defer wg.Done()
 
-				out := samples.Square(cfg)
+				out := models.Square(cfg)
 				signWithText(out)
 			}()
 

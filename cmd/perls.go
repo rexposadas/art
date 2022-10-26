@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"github.com/spf13/cobra"
@@ -28,7 +28,7 @@ func perls(cfg *config.Config, count int) {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			out := samples.Perls(cfg)
+			out := models.Perls(cfg)
 			signWithText(out)
 		}()
 	}

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"github.com/spf13/cobra"
@@ -30,7 +30,7 @@ to quickly create a Cobra application.`,
 			go func() {
 				defer wg.Done()
 
-				out := samples.Hole(cfg)
+				out := models.Hole(cfg)
 				signWithText(out)
 			}()
 
