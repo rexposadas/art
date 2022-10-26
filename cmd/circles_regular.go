@@ -1,11 +1,12 @@
 package cmd
 
 import (
+	"github.com/spf13/cobra"
+	"sync"
+
 	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
-	"github.com/spf13/cobra"
-	"sync"
 )
 
 var circlesRegularCmd = &cobra.Command{
