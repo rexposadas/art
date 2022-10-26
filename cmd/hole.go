@@ -31,7 +31,7 @@ to quickly create a Cobra application.`,
 				defer wg.Done()
 
 				out := samples.Hole(cfg)
-				singWithText(out)
+				signWithText(out)
 			}()
 
 		}

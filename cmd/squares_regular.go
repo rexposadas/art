@@ -30,7 +30,7 @@ var squaresRegularCmd = &cobra.Command{
 				defer wg.Done()
 
 				out := samples.Square(cfg)
-				singWithText(out)
+				signWithText(out)
 			}()
 
 		}

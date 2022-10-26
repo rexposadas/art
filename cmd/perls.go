@@ -29,7 +29,7 @@ func perls(cfg *config.Config, count int) {
 		go func() {
 			defer wg.Done()
 			out := samples.Perls(cfg)
-			singWithText(out)
+			signWithText(out)
 		}()
 	}
 

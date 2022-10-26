@@ -10,6 +10,21 @@ import (
 	"os"
 )
 
+func PathToImageJPG(path string) image.Image {
+	imageFile, err := os.Open(path)
+	if err != nil {
+		log.Fatalf("failed to open: %s", err)
+	}
+
+	result, err := jpeg.Decode(imageFile)
+	if err != nil {
+		log.Fatalf("failed to decode: %s", err)
+	}
+	defer imageFile.Close()
+
+	return result
+}
+
 func PathToImage(path string) image.Image {
 	imageFile, err := os.Open(path)
 	if err != nil {

@@ -29,7 +29,7 @@ func circlesRegular(cfg *config.Config, count int) {
 			defer wg.Done()
 
 			out := samples.Circles(cfg)
-			singWithText(out)
+			signWithText(out)
 		}()
 	}
 

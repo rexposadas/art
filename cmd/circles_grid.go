@@ -27,7 +27,7 @@ Circles with grid.
 			go func() {
 				defer wg.Done()
 				out := samples.CirclesGrid(cfg)
-				singWithText(out)
+				signWithText(out)
 			}()
 
 		}

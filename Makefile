@@ -61,10 +61,15 @@ hole: build
 julia: build
 	/tmp/art julia -c 10 -f input/basic.json
 
+profile: build
+	#rm output/*
+	/tmp/art profile -f input/2018-profile.JPG
+	open output/*
+
 spiral: build
-	#rm output/*.png
-	/tmp/art squares spiral -c 5 -f input/basic.json
-	open output/*.png
+	rm output/*
+	/tmp/art squares spiral -c 1 -f input/basic.json
+	open output/*
 
 merge: build
 	rm output/merged/*
