@@ -10,7 +10,7 @@ all: build
 	/tmp/art hole -c 2 -f input/small.json
 	/tmp/art perls -c 2 -f input/small.json
 	/tmp/art squares spiral -c 2 -f input/small.json
-	/tmp/art squares regular -c 2 -f input/small.json
+	/tmp/art random-shapes -c 2 -f input/small.json
 
 
 for_sale: build
@@ -18,7 +18,7 @@ for_sale: build
 	/tmp/art circles gradient -c 5 -f input/basic.json
 	/tmp/art hole -c 5 -f input/basic.json
 	/tmp/art squares spiral -c 5 -f input/basic.json
-	/tmp/art squares regular -c 5 -f input/basic.json
+	/tmp/art random-shapes -c 5 -f input/basic.json
 	/tmp/art perls -c 5 -f input/basic.json
 	/tmp/art circles grid -c 5 -f input/basic.json
 
@@ -39,7 +39,7 @@ circles: build
 	/tmp/art circles
 
 squares: build
-	/tmp/art squares regular
+	/tmp/art random-shapes
 
 perls: build
 	/tmp/art perls -c 10 -f input/basic.json

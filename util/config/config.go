@@ -44,6 +44,11 @@ func Default() Config {
 
 func New(filename string) Config {
 
+	// Return a default config if no filename is provided.
+	if filename == "" {
+		return Default()
+	}
+
 	cfgFile, err := os.Open(filename)
 	if err != nil {
 		log.Fatalf("failed to read file %q, %s", filename, err)

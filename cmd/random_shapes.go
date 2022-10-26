@@ -9,16 +9,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// squaresRegularCmd represents the squaresregular command
-var squaresRegularCmd = &cobra.Command{
-	Use:   "regular",
+var randomShapesCmd = &cobra.Command{
+	Use:   "random-shapes",
 	Short: "create basic square images",
 	Long: `
 
 
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		require.FileName(file)
 		total := require.Count(count)
 
 		var wg sync.WaitGroup
@@ -29,8 +27,7 @@ var squaresRegularCmd = &cobra.Command{
 			go func() {
 				defer wg.Done()
 
-				models.Square(cfg)
-
+				models.RandomShapes(cfg)
 			}()
 
 		}
@@ -40,5 +37,5 @@ var squaresRegularCmd = &cobra.Command{
 }
 
 func init() {
-	squaresCmd.AddCommand(squaresRegularCmd)
+	rootCmd.AddCommand(randomShapesCmd)
 }

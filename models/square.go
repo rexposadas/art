@@ -10,7 +10,7 @@ import (
 	"github.com/jdxyw/generativeart/arts"
 )
 
-func Square(cfg config.Config) string {
+func RandomShapes(cfg config.Config) string {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(util.RnColor())
@@ -19,7 +19,7 @@ func Square(cfg config.Config) string {
 
 	c.Draw(arts.NewRandomShape(util.Rn(130, 170)))
 
-	cfg.Out.Prefix = "square"
+	cfg.Out.Prefix = "random-shapes"
 	url := cfg.OutURL()
 	c.ToPNG(url)
 
