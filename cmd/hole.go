@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/rexposadas/art/models"
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"github.com/spf13/cobra"
 	"sync"
@@ -24,14 +24,14 @@ to quickly create a Cobra application.`,
 
 		var wg sync.WaitGroup
 
-		cfg := models.NewConfig(file)
+		cfg := config.New(file)
 		for i := 0; i < total; i++ {
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
 
-				out := samples.Hole(cfg)
-				singWithText(out)
+				out := models.Hole(cfg)
+				signWithText(out)
 			}()
 
 		}

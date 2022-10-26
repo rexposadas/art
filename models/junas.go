@@ -1,16 +1,16 @@
-package samples
+package models
 
 import (
 	"github.com/jdxyw/generativeart"
 	"github.com/jdxyw/generativeart/arts"
-	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util"
+	"github.com/rexposadas/art/util/config"
 	"image/color"
 	"math/rand"
 	"time"
 )
 
-func Junas(cfg *models.Config) {
+func Junas(cfg *config.Config) {
 
 	DarkRed := []color.RGBA{
 		util.RnColor(),

@@ -1,9 +1,9 @@
-package samples
+package models
 
 import (
 	"github.com/jdxyw/generativeart/common"
-	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util"
+	"github.com/rexposadas/art/util/config"
 	"math/rand"
 	"time"
 
@@ -11,7 +11,7 @@ import (
 	"github.com/jdxyw/generativeart/arts"
 )
 
-func Smoke(cfg *models.Config) {
+func Smoke(cfg *config.Config) {
 	rand.Seed(time.Now().Unix())
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(common.Black)

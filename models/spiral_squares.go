@@ -1,15 +1,15 @@
-package samples
+package models
 
 import (
 	"github.com/jdxyw/generativeart"
 	"github.com/jdxyw/generativeart/arts"
 	"github.com/jdxyw/generativeart/common"
+	"github.com/rexposadas/art/util/config"
 
-	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util"
 )
 
-func SpiralSquare(cfg *models.Config) string {
+func SpiralSquare(cfg *config.Config) string {
 	c := generativeart.NewCanva(cfg.Canvas.Width, cfg.Canvas.Height)
 	c.SetBackground(common.MistyRose)
 	c.SetLineWidth(float64(util.Rn(5, 10)))

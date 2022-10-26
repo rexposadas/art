@@ -1,16 +1,16 @@
-package samples
+package models
 
 import (
 	"github.com/jdxyw/generativeart"
 	"github.com/jdxyw/generativeart/arts"
-	"github.com/rexposadas/art/models"
 	"github.com/rexposadas/art/util"
+	"github.com/rexposadas/art/util/config"
 	"log"
 	"math/rand"
 	"time"
 )
 
-func Dot(cfg *models.Config) string {
+func Dot(cfg *config.Config) string {
 	if cfg.Canvas.Width < 2080 {
 		log.Printf("Canvas width is too small. Minimum is 2080. Got %d", cfg.Canvas.Width)
 		return ""

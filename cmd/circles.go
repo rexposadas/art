@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/rexposadas/art/models"
+	"github.com/rexposadas/art/util/config"
 	"github.com/spf13/cobra"
 )
 
@@ -13,7 +13,7 @@ var circlesCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 
 		// Default command to create circles.
-		circlesRegular(models.DefaultConfig(), 5)
+		circlesRegular(config.Default(), 5)
 	},
 }
 

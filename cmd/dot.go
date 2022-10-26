@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/rexposadas/art/models"
-	"github.com/rexposadas/art/samples"
+	"github.com/rexposadas/art/util/config"
 	"github.com/rexposadas/art/util/require"
 	"sync"
 
@@ -19,19 +19,19 @@ var dotCmd = &cobra.Command{
 		require.FileName(file)
 
 		total := require.Count(count)
-		cfg := models.NewConfig(file)
+		cfg := config.New(file)
 
 		dot(cfg, total)
 	},
 }
 
-func dot(cfg *models.Config, count int) {
+func dot(cfg *config.Config, count int) {
 	var wg sync.WaitGroup
 	for i := 0; i < count; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			samples.Dot(cfg)
+			models.Dot(cfg)
 		}()
 	}
 	wg.Wait()

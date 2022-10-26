@@ -39,13 +39,6 @@ Config files lets you alter the looks of your art. in the input folder you can s
   "canvas": {
     "width": 300,
     "height": 300
-  },
-  "colors": {
-    "scheme": [
-      {"r":111, "g": 84, "b": 140, "a":  255},
-      {"r":92, "g": 204, "b": 206, "a":  255},
-      {"r":178, "g": 162, "b": 150, "a":  255}
-    ]
   }
 }
 ```
