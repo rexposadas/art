@@ -21,6 +21,7 @@ type Colors struct {
 	Scheme []color.RGBA
 }
 
+// Default to a small image for the sake of speed.
 func Default() Config {
 	defaultCfg := []byte(`
 {
@@ -80,7 +81,7 @@ func (cfg Config) OutURL() string {
 		url = fmt.Sprintf("%s/%s", cfg.Out.Dir, cfg.Out.Prefix)
 	}
 
-	url = fmt.Sprintf("%s-%d_x_%d_%s.png", url, cfg.Canvas.Width, cfg.Canvas.Height, util.RnID())
+	url = fmt.Sprintf("%s-%dx%d_%s.png", url, cfg.Canvas.Width, cfg.Canvas.Height, util.RnID())
 
 	return url
 }

@@ -56,7 +56,7 @@ func CircleGradient(cfg config.Config) string {
 	c.SetColorSchema(util.RnColorScheme())
 	c.Draw(arts.NewColorCircle2(util.Rn(25, 35)))
 
-	cfg.Out.Prefix = "circle-gradient"
+	cfg.Out.Prefix = "gradient"
 	out := cfg.OutURL()
 	if err := c.ToPNG(out); err != nil {
 		log.Printf("failed to generate circle gradient images: %s", err)

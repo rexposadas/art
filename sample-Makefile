@@ -1,0 +1,13 @@
+build:
+	go build --race -o /tmp/art
+
+all: build
+	/tmp/art circles
+	/tmp/art circles gradient
+	/tmp/art circles grid
+	/tmp/art hole
+	/tmp/art perls
+	/tmp/art squares spiral
+	/tmp/art random-shapes
+
+.PHONY: build all

@@ -14,7 +14,6 @@ var circlesLoopCmd = &cobra.Command{
 	Short: "",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		require.FileName(file)
 		total := require.Count(count)
 
 		var wg sync.WaitGroup

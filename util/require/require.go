@@ -13,14 +13,16 @@ func FileName(name string) {
 
 func Count(name string) int {
 	if name == "" {
-		log.Fatalf("must use -c | --count flag and give an int")
+		return 1
 	}
 
 	n, err := strconv.Atoi(name)
-
 	if err != nil {
-
 		log.Printf("--count flag needs to be an integer: %s", err)
+	}
+
+	if n < 1 {
+		log.Printf("--count flag needs to be greater than 0")
 	}
 
 	return n

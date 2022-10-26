@@ -12,7 +12,6 @@ var squaresSpiralCmd = &cobra.Command{
 	Short: "squares making a spiral",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		require.FileName(file)
 		total := require.Count(count)
 
 		cfg := config.New(file)

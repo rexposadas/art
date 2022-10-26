@@ -16,7 +16,6 @@ var circlesGridCmd = &cobra.Command{
 Circles with grid.
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		require.FileName(file)
 		total := require.Count(count)
 
 		var wg sync.WaitGroup

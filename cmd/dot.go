@@ -16,8 +16,6 @@ var dotCmd = &cobra.Command{
 	Long: `
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		require.FileName(file)
-
 		total := require.Count(count)
 		cfg := config.New(file)
 

@@ -14,7 +14,6 @@ var circlesRegularCmd = &cobra.Command{
 	Short: "regular",
 	Long:  `regular circles`,
 	Run: func(cmd *cobra.Command, args []string) {
-		require.FileName(file)
 		total := require.Count(count)
 
 		cfg := config.New(file)

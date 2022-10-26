@@ -15,9 +15,6 @@ var rootCmd = &cobra.Command{
 
 
 `,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -31,18 +28,8 @@ func Execute() {
 
 var file string // Files will be needed for a lot of commands.  So, it's at the top level.
 var count string
-var output string // where the output files will go. defaults to "output"
 
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&file, "file", "f", "", "file to process")
-	rootCmd.PersistentFlags().StringVarP(&output, "output", "o", "", "output directory")
 	rootCmd.PersistentFlags().StringVarP(&count, "count", "c", "1", "count")
-
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
-
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

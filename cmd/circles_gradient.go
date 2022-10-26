@@ -15,13 +15,11 @@ var circlesGradientCmd = &cobra.Command{
 	Short: "circles with gradient",
 	Long:  `circles with gradient`,
 	Run: func(cmd *cobra.Command, args []string) {
-
-		require.FileName(file)
 		total := require.Count(count)
 
 		var wg sync.WaitGroup
-
 		cfg := config.New(file)
+
 		for i := 0; i < total; i++ {
 			wg.Add(1)
 			go func() {
