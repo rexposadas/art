@@ -28,6 +28,15 @@ You can view the options you can have by:
 
 `./art perls`
 
+
+# Sample makefile
+
+There is a sample makefile in the repo. You can use it to generate art.
+
+`make -f sample-Makefile all`
+
+That will generate art for all the calls in the makefile.
+
 # Using a config file
 Config files lets you alter the looks of your art. in the input folder you can see this config: 
 
@@ -54,6 +63,9 @@ That will produce 10 images with the circle config. Here's a sample image:
 ![](images/circle-300_x_300.png)
 
 
+# Contributing
+
+To contribute create an issue and/or a pull request.
 
 # Planned Features
 
