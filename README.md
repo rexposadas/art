@@ -24,7 +24,9 @@ You can view the options you can have by:
 
 # Other calls you can try 
 
-`./art squares regular`
+`./art random-shapes`
+
+`./art perls`
 
 # Using a config file
 Config files lets you alter the looks of your art. in the input folder you can see this config: 
@@ -45,7 +47,7 @@ You can set the canvas and the output directory.
 
 To make use of this config file you can make a call like so: 
 
-`./art circles grid -c 10 -f input/basic.json`
+`./art circles grid -c 10 -f input/config.json`
 
 That will produce 10 images with the circle config. Here's a sample image: 
 

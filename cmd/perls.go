@@ -13,9 +13,7 @@ var perlsCmd = &cobra.Command{
 	Short: "Generate Perls",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		require.FileName(file)
 		total := require.Count(count)
-
 		cfg := config.New(file)
 
 		perls(cfg, total)
