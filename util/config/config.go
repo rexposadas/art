@@ -76,12 +76,16 @@ func (cfg Config) OutURL() string {
 	var url string
 
 	if cfg.Out.Dir == "" {
-		url = fmt.Sprintf("%s", cfg.Out.Prefix)
-	} else {
-		url = fmt.Sprintf("%s/%s", cfg.Out.Dir, cfg.Out.Prefix)
+		cfg.Out.Dir = "output" // default to output dir
 	}
 
+	url = fmt.Sprintf("%s/%s", cfg.Out.Dir, cfg.Out.Prefix)
+
 	url = fmt.Sprintf("%s-%dx%d_%s.png", url, cfg.Canvas.Width, cfg.Canvas.Height, util.RnID())
+
+	if err := util.EnsureDir(cfg.Out.Dir); err != nil {
+		log.Fatalf("failed to create dir %s - %s", cfg.Out.Dir, err)
+	}
 
 	return url
 }
